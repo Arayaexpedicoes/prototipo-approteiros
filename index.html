@@ -873,6 +873,10 @@ function destacarPasseios(btn){
   btn.textContent='Destaque ativado';
   document.getElementById('destaque-msg').style.display='block';
 }
+var ROTAS={'visitante':['s-feed','feed'],'feed':['s-feed','feed'],'roteiros':['s-meus','meus'],'roteiro':['s-roteiro','feed'],'mapa':['s-mapa','mapa'],'favoritos':['s-fav','fav'],'perfil':['s-perfil','perfil'],'agencia':['s-agencia-painel','perfil'],'passeios':['s-passeios-lista','feed']};
+function abrirRota(){var r=ROTAS[(location.hash||'').replace('#','')];if(r)showScreen(r[0],r[1]);}
+window.addEventListener('hashchange',abrirRota);
+abrirRota();
 </script>
 </body>
 </html>
